@@ -37,7 +37,7 @@ _Ambientes usados:_
 3. Y lo mas importante tener ❤ **!!Muchas ganas de aprender algo nuevo!!** ❤.
 
 ### 📝 Tarea
-  1. En base a los ejecicios del commit [@41f5f61b6eb856a8573444397278fd7d0b1249a8](https://github.com/maldos23/javascript-courses-kairos/tree/41f5f61b6eb856a8573444397278fd7d0b1249a8) realizar la integracion de su servidor nodeJS con su front en LIT unicamente el metodo **GET**.
+  1. Crear una promesa que valida un calback que una fecha en el siguiente formato dd/mm/aaaa, no sea menor al dia de hoy.
   
   Recuerdes subirlo a su Branch correspondiente segun su nombre por ejemeplo:
   ```cmd
