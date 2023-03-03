@@ -38,6 +38,7 @@ _Ambientes usados:_
 
 ### 📝 Tarea
   1. Crea un modelo el cual elimine carros en el siguiente metodo __deleteCarModel()__.
+  2. Investigar que es un RELEASE?, Que es un flujo de GIT?, y que es un ISSUE?.
   
   Recuerdes subirlo a su Branch correspondiente segun su nombre por ejemeplo:
   ```cmd
