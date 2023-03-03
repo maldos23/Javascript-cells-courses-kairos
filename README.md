@@ -12,10 +12,8 @@ Gino Missael - Github: [maldos23](https://github.com/maldos23)
 
 ### 🧾 Temario del curso
 
-- **Clase-1** = Bases de javascript, POO, estructura de datos simples.
-- **Clase-2** = Primer acercamiento a NodeJs y V8 Engine.
-- **Clase-3** = Desarrollo de primer API con Express y NodeJS.
-- **Clase-4** = Primer acercamiento a LIT y uso de SSR con NodeJS.
+- **Clase-1** = Creacion de una Callback y una Promesa.
+- **Clase-2** = Creacion de primera API de carros con Express.
 
 ### 💻 Tecnologias
 
