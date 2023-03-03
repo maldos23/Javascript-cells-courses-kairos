@@ -1,0 +1,17 @@
+{
+  "name": "trainee-js-api-and-app",
+  "version": "0.1.0",
+  "description": "Crud with nodeJs stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "express",
+    "react",
+    "react-dom",
+    "lit"
+  ],
+  "author": "maldos23",
+  "license": "MIT"
+}
