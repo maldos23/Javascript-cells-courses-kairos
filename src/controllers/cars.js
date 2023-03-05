@@ -34,7 +34,7 @@ function createNewCars(req, res) {
 function editCarModel(req, res) {
   carsPrototypeEdit.validateAsync({ id: Number(req.params.id), ...req.body })
     .then((data) => {
-      
+
       carsModel[data.id] = {
         name: data.name,
         brand: data.brand,
@@ -46,9 +46,18 @@ function editCarModel(req, res) {
     .catch((error) => generateErrorApi(error, res));
 }
 
-//TODO: Crea un modelo el cual elimine carros en el siguiente metodo 
+//TODO: Crea un modelo el cual elimine carros en el siguiente metodo
+// investigación hecha por Youtube y stackOverflow, necesito practicar con un splice
+// porque me quedaron dudas con esa funcon
 function deleteCarModel(req, res) {
-  const id = req.params.id;
+  const id = req.params.id; //segun con esto se obtiene el id del modelo del carro que se va a eliminar
+  db.deleteCarModel(id, (error, resultado) => {
+    if(error){
+      res.stattus(500).json({mensaje: "Error al eliminar el modelo"});
+    }else{
+      res.json({mensaje: "Modelo eliminado correctamente"});
+    }
+  });
 }
 
 module.exports = { getAllCars, createNewCars, editCarModel, deleteCarModel };
