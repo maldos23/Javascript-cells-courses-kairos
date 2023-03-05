@@ -49,6 +49,16 @@ function editCarModel(req, res) {
 //TODO: Crea un modelo el cual elimine carros en el siguiente metodo 
 function deleteCarModel(req, res) {
   const id = req.params.id;
+  carsPrototypeEdit.validateAsync({id: Number(req.params.id), ...req.body})
+  .then( (data) =>{
+    
+    //delete carsModel[data.id];
+    carsModel.splice(data.id,1);
+
+    res.json({success: true});
+  })
+  .catch( (error) => generateErrorApi(error, res))
+  
 }
 
 module.exports = { getAllCars, createNewCars, editCarModel, deleteCarModel };
