@@ -1,5 +1,5 @@
-const carsModel = require( "../model/cars.js");
-const Joi = require( "joi");
+const carsModel = require("../model/cars.js");
+const Joi = require("joi");
 
 const carsPrototype = Joi.object({
   name: Joi.string().required(),
@@ -32,13 +32,13 @@ function createNewCars(req, res) {
 }
 
 function editCarModel(req, res) {
-  carsPrototypeEdit.validateAsync({ id: Number(req.params.id), ...req.body })
+  carsPrototypeEdit
+    .validateAsync({ id: Number(req.params.id), ...req.body })
     .then((data) => {
-      
       carsModel[data.id] = {
         name: data.name,
         brand: data.brand,
-        year: data.year
+        year: data.year,
       };
 
       res.json({ success: true, cars: carsModel });
@@ -46,9 +46,13 @@ function editCarModel(req, res) {
     .catch((error) => generateErrorApi(error, res));
 }
 
-//TODO: Crea un modelo el cual elimine carros en el siguiente metodo 
 function deleteCarModel(req, res) {
-  const id = req.params.id;
+  const id = Number(req.params.id);
+
+  if (carsModel.indexOf(id)) {
+    carsModel.splice(id, 1);
+    res.json({ success: true, data: carsModel });
+  } else generateErrorApi("Id Invalid", res);
 }
 
 module.exports = { getAllCars, createNewCars, editCarModel, deleteCarModel };
