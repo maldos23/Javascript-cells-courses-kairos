@@ -14,13 +14,30 @@ const carsPrototypeEdit = Joi.object({
   year: Joi.string().max(4).min(4),
 });
 
+/**
+ * @name generateErrorApi
+ * @description This method create a new error response API
+ * @param {string|object} error - Text insert on message object
+ * @param {object} res
+ * @returns res.json({ success: false, message: error.details[0].message })
+ */
 const generateErrorApi = (error, res) =>
-  res.json({ success: false, message: error.details[0].message });
+  res.status(400).json({
+    success: false,
+    message: typeof error === "object" ? error.details[0].message : error,
+  });
 
 function getAllCars(req, res) {
   res.json({ data: carsModel });
 }
 
+/**
+ * @name createNewCars
+ * @description This method inserts a new car into 'carsModels'
+ * @param {object} req required Object to add a new element
+ * @param {object} res response object with new element data
+ * @returns res.json({ success: true });
+ */
 function createNewCars(req, res) {
   carsPrototype
     .validateAsync(req.body)
@@ -30,6 +47,14 @@ function createNewCars(req, res) {
     })
     .catch((error) => generateErrorApi(error, res));
 }
+
+/**
+ * @name editCarModel
+ * @description This function modified a car in carsModel
+ * @param {object} req - required object to edit elements
+ * @param {object} res - response object success edit
+ * @returns res.json({ success: true, cars: carsModel })
+ */
 
 function editCarModel(req, res) {
   carsPrototypeEdit
@@ -46,6 +71,13 @@ function editCarModel(req, res) {
     .catch((error) => generateErrorApi(error, res));
 }
 
+/**
+ * @name deleteCarModel
+ * @description This method delete a object fot the api
+ * @param {object} req - Get the id for the object a delete
+ * @param {object} res - Response of json message
+ * @returns res.json({ success: true, data: carsModel }) || generateErrorApi("Id Invalid", res)
+ */
 function deleteCarModel(req, res) {
   const id = Number(req.params.id);
 
