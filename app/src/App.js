@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./elements/example";
+import "./elements/carsForm";
 import "./styles/index.css"
 
 const URL_API = "http://localhost:3000";
@@ -11,9 +12,9 @@ function App() {
     fetch(`${URL_API}/api/cars`, {
       method: "GET",
     })
-      .then((res) => res.json())
-      .then(({ data }) => setCars(data))
-      .catch((error) => console.error(error));
+    .then((res) => res.json())
+    .then(({ data }) => setCars(data))
+    .catch((error) => console.error(error));
   };
 
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
   return (
     <div className="App">
       <cars-table cars={JSON.stringify(cars)}></cars-table>
+      <cars-form></cars-form>
     </div>
   );
 }
