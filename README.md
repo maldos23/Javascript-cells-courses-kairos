@@ -14,6 +14,8 @@ Gino Missael - Github: [maldos23](https://github.com/maldos23)
 
 - **Clase-1** = Creacion de una Callback y una Promesa.
 - **Clase-2** = Creacion de primera API de carros con Express.
+- **Clase-3** = Introduccion a LIT y vinculacion con REACTJS.
+- **Clase-4** = Ciclo de vida de LIT, Metodos, properties, atributos.
 
 ### 💻 Tecnologias
 
@@ -35,12 +37,11 @@ _Ambientes usados:_
 3. Y lo mas importante tener ❤ **!!Muchas ganas de aprender algo nuevo!!** ❤.
 
 ### 📝 Tarea
-  1. Crea un modelo el cual elimine carros en el siguiente metodo __deleteCarModel()__.
-  2. Investigar que es un RELEASE?, Que es un flujo de GIT?, y que es un ISSUE?.
+  1. Conectar al app un formulario que agregue nuevos carros por el metodo POST porfavor leer el siguiente[Link]( https://lit.dev/docs/v1/components/events/)
   
   Recuerdes subirlo a su Branch correspondiente segun su nombre por ejemeplo:
   ```cmd
-    git switch NOMBRE_DE_BRANCH
+    git switch TAREA+ "-"+NUMERO_DE_TAREA+":"+NOMBREDEALUMNO
   ```
   
   Enviar cambios:
