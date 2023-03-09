@@ -76,6 +76,7 @@ export class CarsForm extends LitElement {
     }
     console.log(newCar);
     // createCar(newCar)
+    //pendiente verificar por que retorna un error en la validacion
   }
 
   render() {
