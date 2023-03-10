@@ -39,6 +39,7 @@ function getAllCars(req, res) {
  * @returns res.json({ success: true });
  */
 function createNewCars(req, res) {
+  console.log(req.body);
   carsPrototype
     .validateAsync(req.body)
     .then((data) => {

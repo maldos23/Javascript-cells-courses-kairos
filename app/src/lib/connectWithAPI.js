@@ -11,9 +11,11 @@ export function getAllCars(cars) {
 
 //---create new car api------
 export function createCar(car) {
+  console.log('create car:',car);
   fetch(`${API_URL}/api/cars`, {
     method: "POST",
-    body: car
+    body: JSON.stringify(car),
+    headers: {"Content-type": "application/json; charset=UTF-8"}
   })
   .then((res) => res.json())
   .then((response) => console.log(response))

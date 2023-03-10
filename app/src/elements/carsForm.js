@@ -28,7 +28,7 @@ export class CarsForm extends LitElement {
       `,
     ];
   }
-
+  car
   static get properties() {
     console.log("properties");
     return {
@@ -74,8 +74,8 @@ export class CarsForm extends LitElement {
       brand: this.inputBrand,
       year: this.inputYear,
     }
-    console.log(newCar);
-    // createCar(newCar)
+    console.log('send car:',newCar);
+    createCar(newCar)
     //pendiente verificar por que retorna un error en la validacion
   }
 
