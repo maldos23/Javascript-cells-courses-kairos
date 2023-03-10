@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./elements/example";
 import "./elements/addCarForm";
 import "./styles/index.css"
 
@@ -10,7 +9,7 @@ function App() {
 
   const getAllMyCars = () => {
     fetch(`${URL_API}/api/cars`, {
-      method: "GET",
+      method: "POST",
     })
       .then((res) => res.json())
       .then(({ data }) => setCars(data))
