@@ -11,16 +11,20 @@ export class CarsTable extends LitElement {
   static get styles() {
     console.log("styles");
     const { cssRules } = document.styleSheets[0];
-    const gobalStyle = css([
+    const globalStyle = css([
       Object.values(cssRules)
         .map((rule) => rule.cssText)
         .join("\n"),
     ]);
     return [
-      gobalStyle,
+      globalStyle,
       css`
         th {
           color: purple;
+        }
+        div {
+          margin:12px 6px;
+          box-shadow: 1px 1px 3px #aaa;
         }
       `,
     ];

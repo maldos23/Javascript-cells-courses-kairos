@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./elements/example";
+import "./elements/formulario";
 import "./styles/index.css"
 
 const URL_API = "http://localhost:3000";
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <div className="App">
+      <cars-form></cars-form>
       <cars-table cars={JSON.stringify(cars)}></cars-table>
     </div>
   );
