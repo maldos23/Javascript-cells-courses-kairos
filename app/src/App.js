@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.css";
 import "./elements/example";
-import "./styles/index.css"
+import "./elements/form-new";
+import "./styles/index.css";
+import "./App.css";
 
 const URL_API = "http://localhost:3000";
 
 function App() {
   const [cars, setCars] = useState([]);
+
+  document.body.addEventListener("send-new-car", f => {
+    getAllMyCars();
+  });
 
   const getAllMyCars = () => {
     fetch(`${URL_API}/api/cars`, {
@@ -24,9 +31,13 @@ function App() {
 
   return (
     <div className="App">
-      <cars-table cars={JSON.stringify(cars)}></cars-table>
+      <add-new></add-new>
+      <br></br>
+      <br></br>
+      <cars-table cars={JSON.stringify(cars)}></cars-table>      
     </div>
   );
+
 }
 
 export default App;
