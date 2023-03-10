@@ -16,6 +16,7 @@ Gino Missael - Github: [maldos23](https://github.com/maldos23)
 - **Clase-2** = Creacion de primera API de carros con Express.
 - **Clase-3** = Introduccion a LIT y vinculacion con REACTJS.
 - **Clase-4** = Ciclo de vida de LIT, Metodos, properties, atributos.
+- **Clase-5** = Integracion de API y Eventos.
 
 ### 💻 Tecnologias
 
@@ -37,7 +38,7 @@ _Ambientes usados:_
 3. Y lo mas importante tener ❤ **!!Muchas ganas de aprender algo nuevo!!** ❤.
 
 ### 📝 Tarea
-  1. Conectar al app un formulario que agregue nuevos carros por el metodo POST porfavor leer el siguiente[Link]( https://lit.dev/docs/v1/components/events/)
+  1. Como se puede realizar de forma sincorna un evento que actualize la tabla de carros al momento de crear un nuevo carro. Pueden consultar la documentacion de LIT [Aqui](https://lit.dev/)
   
   Recuerdes subirlo a su Branch correspondiente segun su nombre por ejemeplo:
   ```cmd
