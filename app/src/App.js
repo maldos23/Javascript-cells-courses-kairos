@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./elements/example";
+import "./elements/addCars"
 import "./styles/index.css"
 
 const URL_API = "http://localhost:3000";
@@ -25,6 +26,7 @@ function App() {
   return (
     <div className="App">
       <cars-table cars={JSON.stringify(cars)}></cars-table>
+      <add-cars></add-cars>
     </div>
   );
 }
