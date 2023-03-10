@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./elements/example";
-import "./styles/index.css"
+import "./elements/carsForm";
+import "./styles/index.css";
 
 const URL_API = "http://localhost:3000";
 
@@ -17,10 +18,9 @@ function App() {
   };
 
   useEffect(() => {
-    
     getAllMyCars();
-    return; 
-  },[]);
+    return;
+  }, []);
 
   return (
     <div className="App">

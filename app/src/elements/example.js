@@ -1,6 +1,8 @@
 import { LitElement, html, css } from "lit";
 import "bootstrap/dist/css/bootstrap.css";
+import "./carsForm";
 
+const URL_API = "http://localhost:3000";
 console.log("Creacion");
 
 export class CarsTable extends LitElement {
@@ -32,6 +34,10 @@ export class CarsTable extends LitElement {
       cars: {
         type: Array,
       },
+      children: {
+        type: Object,
+        required: true,
+      },
     };
   }
 
@@ -45,6 +51,7 @@ export class CarsTable extends LitElement {
     });
     this.cars = [];
     this.headers = [];
+    this.children = null;
   }
 
   extractFieldsHeaders() {
@@ -70,14 +77,27 @@ export class CarsTable extends LitElement {
     console.log("updated");
     this.extractFieldsHeaders();
   }
-  firstUpdated(){
-    super.firstUpdated()
+  firstUpdated() {
+    super.firstUpdated();
     console.log("firstUpdated");
   }
 
-  update(){
+  update() {
     super.update();
     console.log("update");
+  }
+
+  sendMyNewCar({ name, brand, year }) {
+    fetch(`${URL_API}/api/cars`, {
+      method: "POST",
+      body: JSON.stringify({ name, brand, year }),
+      headers:{
+        "Content-Type": "application/json"
+      }
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    ;
   }
 
   render() {
@@ -105,6 +125,7 @@ export class CarsTable extends LitElement {
           })}
         </tbody>
       </table>
+      <cars-form @onsendcar="${(newcar) => this.sendMyNewCar(newcar.detail)}"></cars-form>
     </div>`;
   }
 }
